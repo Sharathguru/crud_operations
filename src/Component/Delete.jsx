@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './Insert.css';
 
 const Delete = () => {
@@ -39,7 +40,14 @@ const Delete = () => {
           </div>
           <button onClick={handleDelete} className="button button-delete">Delete</button>
         </div>
+        <br/>
+        <Link to="/">
+        <button type="button" className="button button-exit1">Exit</button>
+        </Link>
         {message && <p className="text-red-500">{message}</p>}
+        <div className="button-container">
+          
+        </div>
       </div>
     </div>
   );

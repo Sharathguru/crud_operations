@@ -38,11 +38,26 @@
 
 .form-input,
 .form-textarea {
-  width: 100%;
+  width: 98%;
   padding: 8px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #0b0e13;
   border-radius: 4px;
   background-color: #edf2f7;
+}
+
+.form-radio-group {
+  display: flex;
+  gap: 16px;
+}
+
+.form-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-radio-input {
+  margin-right: 8px;
 }
 
 .button-container {
@@ -64,6 +79,11 @@
   background-color: #48bb78;
 }
 
+.button-save1 {
+    width: 640px;
+  background-color: #48bb78;
+}
+
 .button-refresh {
   background-color: #a0aec0;
 }
@@ -78,4 +98,41 @@
 
 .button-delete {
   background-color: #f56565;
+}
+
+.button-exit {
+
+  background-color: #718096;
+}
+.button-exit1 {
+width: 640px;
+  background-color: #718096;
+}
+
+
+.saved-data {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 640px;
+}
+
+.saved-data table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.saved-data th,
+.saved-data td {
+  border: 1px solid #e2e8f0;
+  padding: 8px;
+  text-align: left;
+}
+
+.saved-data th {
+  background-color: #f7fafc;
+  color: #2d3748;
+}
+
+.saved-data td {
+  background-color: #ffffff;
 }

@@ -8,9 +8,7 @@ const Home = () => {
       <br />
       <br />
       <Link to="/update">Update</Link>
-      <br />
-      <br />
-      <Link to="/fetch">Fetch</Link>
+      
       <br />
       <br />
       <Link to="/delete">Delete</Link>

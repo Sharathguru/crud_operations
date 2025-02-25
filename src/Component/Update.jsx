@@ -8,11 +8,13 @@ const Update = () => {
     code: '',
     name: '',
     address: '',
+    stateName: '',
+    gender: '',
     dateOfBirth: '',
     phoneNo: ''
   });
 
-  const { code, name, address, dateOfBirth, phoneNo } = formData;
+  const { code, name, address, stateName, gender, dateOfBirth, phoneNo } = formData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,7 +31,7 @@ const Update = () => {
         headers: { 'Content-Type': 'application/json' }
       });
       alert('Data updated successfully!');
-      setFormData({ code: '', name: '', address: '', dateOfBirth: '', phoneNo: '' });
+      setFormData({ code: '', name: '', address: '', stateName: '', gender: '', dateOfBirth: '', phoneNo: '' });
     } catch (err) {
       console.error('Error updating data:', err);
       alert('Error updating data. Check backend.');
@@ -75,6 +77,51 @@ const Update = () => {
             ></textarea>
           </div>
           <div>
+            <label className="form-label">State Name</label>
+            <select
+              name="stateName"
+              value={stateName}
+              onChange={handleChange}
+              className="form-input"
+              required
+            >
+              <option value="">Select State</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Tumkur">Tumkur</option>
+            </select>
+          </div>
+          <div>
+            <label className="form-label">Gender</label>
+            <div className="form-radio-group">
+              <label className="form-radio-label">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Male"
+                  checked={gender === 'Male'}
+                  onChange={handleChange}
+                  className="form-radio-input"
+                  required
+                />
+                Male
+              </label>
+              <label className="form-radio-label">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Female"
+                  checked={gender === 'Female'}
+                  onChange={handleChange}
+                  className="form-radio-input"
+                  required
+                />
+                Female
+              </label>
+            </div>
+          </div>
+          <div>
             <label className="form-label">Date of Birth</label>
             <input
               type="date"
@@ -101,11 +148,11 @@ const Update = () => {
             <Link to="/">
               <button type="button" className="button button-save">Insert</button>
             </Link>
-            <Link to="/fetch">
-              <button type="button" className="button button-fetch">Fetch</button>
-            </Link>
             <Link to="/delete">
               <button type="button" className="button button-delete">Delete</button>
+            </Link>
+            <Link to="/">
+              <button type="button" className="button button-exit">Exit</button>
             </Link>
           </div>
         </form>
